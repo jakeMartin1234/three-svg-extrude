@@ -25,14 +25,18 @@ Import the Library into your file.
 import { svgToExtrudedGeometry } from 'three-svg-extrude';
 ```
 
-The following code is from the [demo](https://github.com/jakeMartin1234/three-svg-extrude-test) and is 
-an example of the intended method of use.
+The following code is from the [demo](https://github.com/jakeMartin1234/three-svg-extrude-test) and is an example of the intended method of use.
+
+The first argument is the file path to the svg file you want to extrude.
+The second argument is the depth of extrusion, and you can use the third (scale) variable to adjust the size
+of the geometry.
 
 ```javascript
 async function loadAndExtrudeSVG() {
     try {
-        const bananaScale = 0.01;
-        const geometry = await svgToExtrudedGeometry('bananaSVG.svg', 1, bananaScale);
+        const scale = 0.01;
+        const extrudeDepth = 1
+        const geometry = await svgToExtrudedGeometry('bananaSVG.svg', extrudeDepth, scale);
 
         const material = new THREE.MeshPhongMaterial({ color: 'yellow' });
         const mesh = new THREE.Mesh(geometry, material);
