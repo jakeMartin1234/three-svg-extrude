@@ -16,6 +16,7 @@
     "dist",
     "README.md"
   ],
+  "homepage": "https://jakemartinaus.me",
   "sideEffects": false,
   "author": "Jake Martin",
   "license": "MIT",
